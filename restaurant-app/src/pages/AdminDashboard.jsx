@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import AddRestaurantForm from '../components/AddRestaurantForm'
 import ReataurantCard from '../components/ReataurantCard'
+import { useNavigate } from 'react-router-dom';
 
 const AdminDashboard = () => {
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
+    const navigate = useNavigate();
     const loadData = ()=>{
        const stored =  JSON.parse(localStorage.getItem("evalData")) |[];
     setData(stored)
@@ -25,14 +27,13 @@ const AdminDashboard = () => {
   return (
     <div>
     <AddRestaurantForm refresh = {loadData} />
-
-    {data.map((r) =>(
+    {data.map((r) => (
         <ReataurantCard
      key= {r.restaurant.id}
       data = {r}
       isAdmin={true}
       onDelete={handleDelete}
-      onUpdate={()=>Navigate("/admin/dashboard", {state:r})}
+      onUpdate={()=>navigate("/admin/dashboard", {state:r})}
       />
     ))}
 
