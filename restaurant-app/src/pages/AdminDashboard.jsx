@@ -7,7 +7,7 @@ const AdminDashboard = () => {
     const [data, setData] = useState([]);
     const navigate = useNavigate();
     const loadData = ()=>{
-       const stored =  JSON.parse(localStorage.getItem("evalData")) |[];
+       const stored =  JSON.parse(localStorage.getItem("evalData")) ||[];
     setData(stored)
     }
 
