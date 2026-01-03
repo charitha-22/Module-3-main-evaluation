@@ -9,7 +9,7 @@ const AddRestaurantForm = () => {
             restaurantId: Date.now(),
             restaurantName: e.target.name.value,
             address: e.target.address.value,
-            type: e.target.taype.value,
+            type: e.target.type.value,
             parkingLot: e.target.parking.value === "true",
             image: e.target.image.value
         };
