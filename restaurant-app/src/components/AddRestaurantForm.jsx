@@ -40,7 +40,7 @@ const AddRestaurantForm = () => {
             <option value="true">Parking Available</option>
             <option value="false">No Parking</option>
         </select>
-        <input type="image" src="https://coding-platform.s3.amazonaws.com/dev/lms/tickets/7524df6e-46fa-4506-8766-eca8da47c2f1/2izhqnTaNLdenHYF.jpeg" alt="image" />
+        <input type="image" defaultValue="https://coding-platform.s3.amazonaws.com/dev/lms/tickets/7524df6e-46fa-4506-8766-eca8da47c2f1/2izhqnTaNLdenHYF.jpeg" alt="image" />
         <button type='submit'>Add</button>
     </form>
     </>
