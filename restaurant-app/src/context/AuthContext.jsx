@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
-const [user,setUser] = useState();
+const [user,setUser] = useState(null);
 
 useEffect(()=>{
     const savedUser = JSON.parse(localStorage.getItem("user"));

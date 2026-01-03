@@ -3,16 +3,17 @@ import { useAuth } from '../context/AuthContext';
 import {useNavigate} from 'react-router-dom';
 
 const Login = () => {
-    const { login } = useAuth();
+    // const { login } = useAuth();
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const handleLogin = () =>{
-        const user = logout(email, password);
+        const user = useAuth().login(email, password);
         if(!user) return;
 
-        // if(user.role ==="admin") 
+        if(user.role ==="admin")  navigate("/admin/dashboard");
+        else navigate("//customers/dashboard")
     }
   return (
     <>
