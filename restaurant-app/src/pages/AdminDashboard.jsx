@@ -3,7 +3,7 @@ import AddRestaurantForm from '../components/AddRestaurantForm'
 import ReataurantCard from '../components/ReataurantCard'
 
 const AdminDashboard = () => {
-    const [data, setData] = useState()
+    const [data, setData] = useState([])
     const loadData = ()=>{
        const stored =  JSON.parse(localStorage.getItem("evalData")) |[];
     setData(stored)
@@ -23,18 +23,20 @@ const AdminDashboard = () => {
     };
     
   return (
-    <>
+    <div>
     <AddRestaurantForm refresh = {loadData} />
 
-    {data.map(r)}
-    <ReataurantCard
+    {data.map((r) =>(
+        <ReataurantCard
      key= {r.restaurant.id}
       data = {r}
       isAdmin={true}
       onDelete={handleDelete}
       onUpdate={()=>Navigate("/admin/dashboard", {state:r})}
       />
-    </>
+    ))}
+
+    </div>
   )
 }
 

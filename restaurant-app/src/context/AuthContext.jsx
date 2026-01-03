@@ -32,7 +32,7 @@ const logout = () =>{
     localStorage.removeItem("user");
 };
   return (
-    <AuthContext.Provider value = {{
+    <AuthContext.Provider value={{
         user,
         login,
         logout
