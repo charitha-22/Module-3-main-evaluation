@@ -1,7 +1,6 @@
 import React from 'react'
 
 const ReataurantCard = ({data, isAdmin, onDelete, onUpdate}) => {
-    console.log(data);
   return (
     <>
     <img src={data.image} alt="" width="150" />
@@ -13,7 +12,7 @@ const ReataurantCard = ({data, isAdmin, onDelete, onUpdate}) => {
     {isAdmin && (
         <>
         <button onClick={()=>onUpdate(data)}>Update</button>
-        <button onClick={()=>onDelete(data.restaurant.id)}>Delete</button>
+        <button onClick={()=>onDelete(data.restaurantId)}>Delete</button>
         </>
     )}
     </>

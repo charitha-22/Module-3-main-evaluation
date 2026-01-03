@@ -9,12 +9,11 @@ const AdminDashboard = () => {
     const loadData = ()=>{
        const stored =  JSON.parse(localStorage.getItem("evalData")) ||[];
     setData(stored)
-    console.log(stored);
     }
 
     useEffect(()=>{
         loadData();
-    },[data])
+    },[])
 
     const handleDelete = (id) =>{
         if(!window.confirm("Are you sure to delete ?")) return;
