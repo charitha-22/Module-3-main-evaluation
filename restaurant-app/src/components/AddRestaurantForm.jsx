@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AddRestaurantForm = () => {
+const AddRestaurantForm = ({refresh}) => {
     const handleSubmit = (e) =>{
         e.preventDefault();
         const data = JSON.parse(localStorage.getItem("evalData")) || [];
